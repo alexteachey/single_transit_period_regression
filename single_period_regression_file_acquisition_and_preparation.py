@@ -42,7 +42,7 @@ for kepoi in kepoi_names:
 ##### then use prep_for_CNN().
 
 if os.path.exists(projectdir+'/kois_already_processed.txt'):
-	processed_kois_file = open(projectdir+'/kois_already_processed.txt' mode='r')
+	processed_kois_file = open(projectdir+'/kois_already_processed.txt', mode='r')
 	processed_kois = []
 	for nline,line in enumerate(processed_kois_file):
 		processed_kois.append(line)
