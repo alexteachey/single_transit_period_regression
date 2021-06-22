@@ -48,12 +48,22 @@ try:
 		processed_kois_file = open(projectdir+'/kois_already_processed.txt', mode='r')
 		processed_kois = []
 		for nline,line in enumerate(processed_kois_file):
-			processed_kois.append(line)
+			processed_kois.append(line[:-1])
 		processed_kois_file.close()
+
+		print('processed_kois: ', processed_kois)
+
+
 
 	else:
 		print('kois_already_processed.txt does not exist.')
 		processed_kois = []
+
+
+	continue_query = input('Do you want to continue? y/n: ')
+	if continue_query != 'y':
+		raise Exception('you opted not to continue.')
+
 
 	for koi in koi_names:
 		print(koi)
